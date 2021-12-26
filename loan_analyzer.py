@@ -17,7 +17,7 @@ loan_costs = [500, 600, 200, 1000, 450]
 # How many loans are in the list?
 # @TODO: Use the `len` function to calculate the total number of loans in the list.
 # Print the number of loans from the list
-len_loan_costs = len (loan_costs)
+len_loan_costs = len(loan_costs)
 print(f"There are a total of {len_loan_costs} loans in the list provided")
 
 # What is the total of all loans?
@@ -66,7 +66,9 @@ loan = {
 # @TODO: Use get() on the dictionary of additional information to extract the Future Value and Remaining Months on the loan.
 # Print each variable.
 future_value = loan.get("future_value")
+print(f"future_value: {future_value}")
 remaining_months = loan.get("remaining_months")
+print(f"remaining_months: {remaining_months}")
 
 # @TODO: Use the formula for Present Value to calculate a "fair value" of the loan.
 # Use a minimum required return of 20% as the discount rate.
@@ -83,10 +85,10 @@ print(f"fair value of the loan is: {present_value}")
 #    If the present value of the loan is greater than or equal to the cost, then print a message that says the loan is worth at least the cost to buy it.
 #    Else, the present value of the loan is less than the loan cost, then print a message that says that the loan is too expensive and not worth the price.
 
-if present_value > future_value:
-    print("Loan is worth at least the cost to buy it")
+if present_value >= future_value:
+    print("Loan is worth at least the cost to buy it.")
 else:
-    print("Loan is too expensive and not worth the price")
+    print("Loan is too expensive and not worth the price.")
 
 """Part 3: Perform Financial Calculations.
 
@@ -112,7 +114,7 @@ new_loan = {
 #    The function should return the `present_value` for the loan.
 
 def calculate_present_value(future_value, remaining_months, annual_discount_rate):
-    present_value = future_value/(1+discount_rate/12) ** remaining_months
+    present_value = future_value/(1+annual_discount_rate/12) ** remaining_months
     return present_value
 
 # @TODO: Use the function to calculate the present value of the new loan given below.
